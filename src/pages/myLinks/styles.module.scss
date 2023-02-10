@@ -1,0 +1,44 @@
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 1080px;
+  margin: 0 auto;
+
+  .headerContainer {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 4rem 0;
+    padding: 0 2rem;
+
+    h1 {
+      font-size: 2.5rem;
+      color: var(--black);
+    }
+
+    button {
+      background-color: var(--green-lime);
+
+      border: 1px solid var(--green-lime);
+      border-radius: 0.5rem;
+
+      font-size: 1rem;
+
+      padding: 1rem 2rem;
+
+      transition: 0.2s;
+    }
+
+    button:hover {
+      filter: brightness(0.8);
+    }
+  }
+
+  .linksContainer {
+    width: 100%;
+    padding: 0 4rem;
+  }
+}

@@ -1,0 +1,26 @@
+.linkContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+
+  border: 1px solid var(--green-lime);
+  border-radius: 0.5rem;
+
+  margin-bottom: 2rem;
+  padding: 1rem 2rem;
+
+  span {
+    font-size: 1rem;
+    color: var(--black);
+  }
+}
+
+.iconTrash {
+  margin-right: 0.5rem;
+  cursor: pointer;
+}
+
+.iconEdit {
+  cursor: pointer;
+}

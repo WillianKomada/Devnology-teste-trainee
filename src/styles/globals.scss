@@ -2,17 +2,50 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 5px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--green-lime);
+  }
+  ::-webkit-scrollbar-track {
+    background: #ddd;
+  }
 }
 
 :root {
-  
+  --white: #ffffff;
+  --white-background: #fafafa;
+  --black: #121214;
+  --gray-700: #4c4c4f;
+  --gray-400: #929292;
+  --green-lime: #00ff5f;
+}
+
+@media (max-width: 1080px) {
+  html {
+    font-size: 93.75%;
+  }
+}
+
+@media (max-width: 720px) {
+  html {
+    font-size: 87.5%;
+  }
 }
 
 body {
-
+  background: var(--white-background);
+  color: var(--black);
 }
 
-body, input, textarea, select, button {
+body,
+input,
+textarea,
+select,
+button {
   font: 400 1rem "Roboto", sans-serif;
 }
 
