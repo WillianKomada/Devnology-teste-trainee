@@ -2,7 +2,7 @@ import styles from "./styles.module.scss";
 
 export default function CardURL() {
   return (
-    <div>
+    <div data-aos="zoom-in">
       <div className={styles.cardContainer}>
         <h1>title</h1>
         <p>

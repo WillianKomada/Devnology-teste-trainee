@@ -1,9 +1,16 @@
+import React, { useContext } from "react";
+import { UrlContext } from "../../../context/UrlContext";
 import Header from "@/components/Header";
 import URL from "@/components/URL";
 
 import styles from "./styles.module.scss";
+import CreateModalUrl from "@/components/CreateModalURL";
+import EditModalUrl from "@/components/EditModalURL";
 
-export default function myLinks() {
+export default function MyLinks() {
+  const { handleOpenModalNewLink, isModalOpenNewLink, isModalOpenEditLink } =
+    useContext(UrlContext);
+
   return (
     <>
       <Header />
@@ -12,7 +19,7 @@ export default function myLinks() {
         <div className={styles.headerContainer}>
           <h1>Meus Links</h1>
 
-          <button>Novo Link</button>
+          <button onClick={handleOpenModalNewLink}>Novo Link</button>
         </div>
 
         {/* List of Links */}
@@ -24,6 +31,9 @@ export default function myLinks() {
           <URL />
         </div>
       </main>
+
+      {isModalOpenNewLink && <CreateModalUrl />}
+      {isModalOpenEditLink && <EditModalUrl />}
     </>
   );
 }
