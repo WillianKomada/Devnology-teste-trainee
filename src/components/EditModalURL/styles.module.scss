@@ -1,117 +1,70 @@
-.overlay {
-  background: rgba(0, 0, 0, 0.88);
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
+.container {
+  background: var(--white);
+  width: 80%;
+  height: 80%;
+  padding: 2rem 3rem;
+  border: 1px solid var(--green-lime);
+  border-radius: 0.5rem;
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--black);
+  }
 
-  .container {
-    background: var(--white);
-    width: 80%;
-    height: 80%;
+  .containerForm {
     padding: 2rem 3rem;
-    border: 1px solid var(--green-lime);
-    border-radius: 0.5rem;
 
-    h1 {
-      font-size: 2.5rem;
-      font-weight: bold;
-      color: var(--black);
-    }
-
-    .containerForm {
-      padding: 2rem 3rem;
-
-      .wrapContainer {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: center;
-        margin-bottom: 20px;
-
-        label {
-          font-size: 2rem;
-          font-weight: 400;
-          color: var(--black);
-        }
-
-        input {
-          width: 100%;
-          height: 50px;
-          border: 1px solid var(--green-lime);
-          border-radius: 0.5rem;
-          padding: 0 1rem;
-
-          font-size: 1rem;
-          font-weight: 400;
-          color: var(--black);
-        }
-
-        input:focus {
-          border: 2px solid var(--green-lime);
-          outline: var(--green-lime);
-        }
-
-        textarea {
-          width: 100%;
-          min-width: 100%;
-          max-width: 100%;
-          height: 120px;
-          max-height: 160px;
-          border: 1px solid var(--green-lime);
-          border-radius: 0.5rem;
-          padding: 1rem 1rem;
-        }
-
-        textarea:focus {
-          border: 2px solid var(--green-lime);
-          outline: var(--green-lime);
-        }
-      }
-    }
-
-    .buttonContainer {
+    .wrapContainer {
       display: flex;
-      align-items: center;
-      justify-content: flex-end;
-      padding: 1rem 3rem;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      margin-bottom: 20px;
 
-      .buttonSave {
-        margin-right: 20px;
-
-        padding: 1rem 2rem;
-        font-size: 1rem;
+      label {
+        font-size: 2rem;
         font-weight: 400;
         color: var(--black);
-
-        background: var(--green-lime);
-        border: none;
-        border-radius: 0.5rem;
-
-        transition: 0.2s;
+        margin-bottom: 20px;
       }
+    }
+  }
 
-      .buttonCancel {
-        padding: 1rem 2rem;
-        font-size: 1rem;
-        font-weight: 400;
-        color: var(--black);
+  .buttonContainer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 1rem 3rem;
 
-        background: var(--gray-400);
-        border: none;
-        border-radius: 0.5rem;
+    .buttonSave {
+      padding: 1rem 2rem;
+      font-size: 1rem;
+      font-weight: 400;
+      color: var(--black);
 
-        transition: 0.2s;
-      }
+      background: var(--green-lime);
+      border: none;
+      border-radius: 0.5rem;
 
-      button:hover {
-        filter: brightness(0.8);
-      }
+      transition: 0.2s;
+    }
+
+    .buttonCancel {
+      padding: 1rem 2rem;
+      font-size: 1rem;
+      font-weight: 400;
+      color: var(--black);
+
+      background: var(--gray-400);
+      border: none;
+      border-radius: 0.5rem;
+
+      transition: 0.2s;
+    }
+
+    button:hover {
+      filter: brightness(0.8);
     }
   }
 }

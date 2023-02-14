@@ -1,0 +1,19 @@
+.inputContainer {
+  width: 100%;
+  input {
+    width: 100%;
+    height: 50px;
+    border: 1px solid var(--green-lime);
+    border-radius: 0.5rem;
+    padding: 0 1rem;
+
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--black);
+  }
+
+  input:focus {
+    border: 2px solid var(--green-lime);
+    outline: var(--green-lime);
+  }
+}

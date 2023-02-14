@@ -11,7 +11,7 @@ export default function Header() {
         </h1>
         <nav>
           <ActiveLink activeClassName={styles.active} href="/">
-            <a>Home</a>
+            <a>Início</a>
           </ActiveLink>
           <ActiveLink activeClassName={styles.active} href="/MyLinks">
             <a>Meus Links</a>

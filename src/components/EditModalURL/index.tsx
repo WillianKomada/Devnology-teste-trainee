@@ -1,39 +1,73 @@
-import { useContext } from "react";
-import { UrlContext } from "context/UrlContext";
+import { useRef } from "react";
+import { FormHandles } from "@unform/core";
 import styles from "./styles.module.scss";
+import { Modal } from "../Modal";
+import { Form } from "@unform/web";
+import { Input } from "../Input";
 
-export default function EditModalUrl() {
-  const { handleCloseModalEditLink } = useContext(UrlContext);
+interface IUrl {
+  id: string;
+  title: string;
+  url_link: string;
+  description: string;
+}
+
+interface AddUrl {
+  title: string;
+  url_link: string;
+  description: string;
+}
+
+interface EditModalUrlProps {
+  isOpen: boolean;
+  setIsOpen: () => void;
+  editingUrl: IUrl;
+  handleUpdateUrl: (data: AddUrl) => void;
+}
+
+export default function EditModalUrl({
+  isOpen,
+  setIsOpen,
+  editingUrl,
+  handleUpdateUrl,
+}: EditModalUrlProps) {
+  const formRef = useRef<FormHandles>(null);
+
+  const handleSubmit = async (data: AddUrl) => {
+    handleUpdateUrl(data);
+    setIsOpen();
+  };
 
   return (
-    <div className={styles.overlay}>
-      <div className={styles.container}>
+    <Modal isOpen={isOpen} setIsOpen={setIsOpen}>
+      <Form
+        ref={formRef}
+        onSubmit={handleSubmit}
+        initialData={editingUrl}
+        className={styles.container}
+      >
         <h1>Editar Link</h1>
         <div className={styles.containerForm}>
           <div className={styles.wrapContainer}>
             <label htmlFor="link-title">Título</label>
-            <input type="text" id="link-title" autoFocus />
+            <Input name="title" />
           </div>
           <div className={styles.wrapContainer}>
             <label htmlFor="link-url">URL</label>
-            <input type="text" id="link-url" />
+            <Input name="url_link" />
           </div>
           <div className={styles.wrapContainer}>
             <label htmlFor="link-description">Descrição</label>
-            <textarea id="link-title"></textarea>
+            <Input name="description" />
           </div>
         </div>
 
         <div className={styles.buttonContainer}>
-          <button className={styles.buttonSave}>Salvar</button>
-          <button
-            onClick={handleCloseModalEditLink}
-            className={styles.buttonCancel}
-          >
-            Cancelar
+          <button type="submit" className={styles.buttonSave}>
+            Salvar
           </button>
         </div>
-      </div>
-    </div>
+      </Form>
+    </Modal>
   );
 }
